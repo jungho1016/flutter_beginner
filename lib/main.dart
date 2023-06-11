@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
       ),
       home: const MyHomePage(),
     );
@@ -31,6 +30,19 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('홈'),
+      ),
+      body: Center(
+        child: Text(
+          '0',
+          style: TextStyle(
+            color: Colors.red,
+            fontSize: 70,
+          ),
+        ),
+      ),
+    );
   }
 }
