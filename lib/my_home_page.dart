@@ -10,7 +10,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int count = 0;
+  int number = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             Text(
-              '$count',
+              '$number',
               style: TextStyle(
                 color: Colors.red,
                 fontSize: 70,
@@ -61,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
         onPressed: () {
           setState(() {
             // 화면 갱신
-            count++;
+            number++;
           });
         },
         child: Icon(Icons.add),
