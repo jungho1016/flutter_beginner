@@ -63,6 +63,18 @@ class _MainPageState extends State<MainPage> {
                 border: OutlineInputBorder(),
               ),
             ),
+            Image.network(
+              'https://t1.daumcdn.net/cfile/tistory/99B634495AA0EC0310',
+              width: 100,
+              height: 100,
+              fit: BoxFit.cover,
+            ),
+            Image.asset(
+              'assets/pick.jpg',
+              width: 100,
+              height: 100,
+              fit: BoxFit.cover,
+            )
           ],
         ),
       ),
