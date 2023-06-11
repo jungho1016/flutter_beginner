@@ -10,11 +10,14 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  int number = 10;
+  // 변수, 인스턴스, 오브젝트, 상수
+  int number = 10; // 전역 변수
   final TextEditingController _textController = TextEditingController();
 
   @override
   void dispose() {
+    int i = 10;
+    i = 11; // 지역 변수
     _textController.dispose();
     super.dispose();
   }
