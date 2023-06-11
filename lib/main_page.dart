@@ -10,7 +10,14 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-  int number = 0;
+  int number = 10;
+  final TextEditingController _textController = TextEditingController();
+
+  @override
+  void dispose() {
+    _textController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -67,9 +74,8 @@ class _MainPageState extends State<MainPage> {
                   Expanded(
                     flex: 3,
                     child: TextField(
-                      onChanged: (text) {
-                        print(text);
-                      },
+                      controller: _textController,
+                      onChanged: (text) {},
                       decoration: InputDecoration(
                         labelText: '글자',
                         border: OutlineInputBorder(),
@@ -79,12 +85,18 @@ class _MainPageState extends State<MainPage> {
                   Expanded(
                     flex: 2,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        print(_textController.text);
+
+                        // 화면 갱신
+                        setState(() {});
+                      },
                       child: Text('Login'),
                     ),
                   ),
                 ],
               ),
+              Text(_textController.text),
               Image.network(
                 'https://t1.daumcdn.net/cfile/tistory/99B634495AA0EC0310',
                 width: 100,
