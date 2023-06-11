@@ -62,14 +62,28 @@ class _MainPageState extends State<MainPage> {
                 },
                 child: Text('OutlinedButton'),
               ),
-              TextField(
-                onChanged: (text) {
-                  print(text);
-                },
-                decoration: InputDecoration(
-                  labelText: '글자',
-                  border: OutlineInputBorder(),
-                ),
+              Row(
+                children: [
+                  Expanded(
+                    flex: 3,
+                    child: TextField(
+                      onChanged: (text) {
+                        print(text);
+                      },
+                      decoration: InputDecoration(
+                        labelText: '글자',
+                        border: OutlineInputBorder(),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: Text('Login'),
+                    ),
+                  ),
+                ],
               ),
               Image.network(
                 'https://t1.daumcdn.net/cfile/tistory/99B634495AA0EC0310',
