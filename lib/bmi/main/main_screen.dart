@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_beginner/result/result_sceen.dart';
+import 'package:flutter_beginner/bmi/result/result_sceen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class MainScreen extends StatefulWidget {
