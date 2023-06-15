@@ -60,7 +60,7 @@ class _MainScreenState extends State<MainScreen> {
           return true;
         },
         child: WebView(
-            initialUrl: 'https://pub.dev/',
+            initialUrl: 'https://cafe.naver.com/survivalcoding',
             javascriptMode: JavascriptMode.unrestricted,
             onWebViewCreated: (cotroller) {
               _webViewController = cotroller;
