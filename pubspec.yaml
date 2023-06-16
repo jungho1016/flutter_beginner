@@ -38,6 +38,7 @@ dependencies:
   shared_preferences: 2.0.15
   webview_flutter: ^3.0.4
   intl: ^0.18.1
+  image_picker: ^0.8.9
 
 dev_dependencies:
   flutter_test:

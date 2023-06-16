@@ -43,7 +43,7 @@ class _MainScreenState extends State<MainScreen> {
           ),
           CircleAvatar(
             backgroundImage: NetworkImage(
-              'https://lh3.google.com/u/1/ogw/AOLn63EH2PgIwVH0MpP4EMCDnDrf9l9waZFxOg5h_xuB=s64-c-mo',
+              'https://yt3.ggpht.com/yti/AHyvSCDoFccJAOqPQN50_kd7D1l-T1ArHd8Pvmfmeg=s88-c-k-c0x00ffffff-no-rj-mo',
             ),
           ),
         ],
