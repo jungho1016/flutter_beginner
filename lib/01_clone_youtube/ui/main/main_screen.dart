@@ -107,166 +107,45 @@ class _MainScreenState extends State<MainScreen> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(),
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10),
-                          ),
-                        ),
-                        width: 50,
-                        height: 30,
-                        child: Center(
-                          child: Text(
-                            '전체',
-                            style: TextStyle(fontSize: 16),
-                          ),
-                        )),
+                  TopCategoly(
+                    text: '전체',
+                    boxColor: Colors.white,
+                    textColor: Colors.black,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey,
-                        border: Border.all(),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                      ),
-                      width: 50,
-                      height: 30,
-                      child: Center(
-                        child: Text(
-                          '뉴스',
-                          style: TextStyle(fontSize: 16, color: Colors.white),
-                        ),
-                      ),
-                    ),
+                  TopCategoly(
+                    text: '뉴스',
+                    boxColor: Colors.grey,
+                    textColor: Colors.white,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey,
-                        border: Border.all(),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                      ),
-                      width: 50,
-                      height: 30,
-                      child: Center(
-                        child: Text(
-                          '게임',
-                          style: TextStyle(fontSize: 16, color: Colors.white),
-                        ),
-                      ),
-                    ),
+                  TopCategoly(
+                    text: '게임',
+                    boxColor: Colors.grey,
+                    textColor: Colors.white,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey,
-                        border: Border.all(),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                      ),
-                      width: 50,
-                      height: 30,
-                      child: Center(
-                        child: Text(
-                          '음악',
-                          style: TextStyle(fontSize: 16, color: Colors.white),
-                        ),
-                      ),
-                    ),
+                  TopCategoly(
+                    text: '음악',
+                    boxColor: Colors.grey,
+                    textColor: Colors.white,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey,
-                        border: Border.all(),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                      ),
-                      width: 50,
-                      height: 30,
-                      child: Center(
-                        child: Text(
-                          '야구',
-                          style: TextStyle(fontSize: 16, color: Colors.white),
-                        ),
-                      ),
-                    ),
+                  TopCategoly(
+                    text: '축구',
+                    boxColor: Colors.grey,
+                    textColor: Colors.white,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey,
-                        border: Border.all(),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                      ),
-                      width: 50,
-                      height: 30,
-                      child: Center(
-                        child: Text(
-                          '실시간',
-                          style: TextStyle(fontSize: 16, color: Colors.white),
-                        ),
-                      ),
-                    ),
+                  TopCategoly(
+                    text: '야구',
+                    boxColor: Colors.grey,
+                    textColor: Colors.white,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey,
-                        border: Border.all(),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                      ),
-                      height: 30,
-                      child: Padding(
-                        padding: const EdgeInsets.all(3.0),
-                        child: Center(
-                          child: Text(
-                            '만화영화',
-                            style: TextStyle(fontSize: 14, color: Colors.white),
-                          ),
-                        ),
-                      ),
-                    ),
+                  TopCategoly(
+                    text: '농구',
+                    boxColor: Colors.grey,
+                    textColor: Colors.white,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey,
-                        border: Border.all(),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                      ),
-                      width: 50,
-                      height: 30,
-                      child: Center(
-                        child: Text(
-                          '축구',
-                          style: TextStyle(fontSize: 16, color: Colors.white),
-                        ),
-                      ),
-                    ),
+                  TopCategoly(
+                    text: '영화',
+                    boxColor: Colors.grey,
+                    textColor: Colors.white,
                   ),
                 ],
               ),
@@ -278,128 +157,6 @@ class _MainScreenState extends State<MainScreen> {
               itemBuilder: (context, index) {
                 return Column(
                   children: [
-                    Stack(
-                      children: [
-                        Container(
-                          width: double.infinity,
-                          child: Image.network(
-                            'http://img.youtube.com/vi/V0eBEf9mD_8/mqdefault.jpg',
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Positioned(
-                          bottom: 5,
-                          right: 5,
-                          child: Container(
-                            padding: EdgeInsets.all(4),
-                            color: Colors.black.withOpacity(0.5),
-                            child: Text(
-                              '16:21',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: NetworkImage(
-                          'https://yt3.ggpht.com/ytc/AGIKgqN5x06uPtKiqcBiK8H5uiaesPlQcFxujuuKNiOeMA=s88-c-k-c0x00ffffff-no-rj',
-                        ),
-                      ),
-                      title: Text(
-                        '스파6 - 세번 잡히면 죽습니다',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      subtitle: Row(
-                        children: [
-                          Text(
-                            '아빠킹',
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                          Text(
-                            ' · ',
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                          Text(
-                            '조회수 4만회',
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                          Text(
-                            ' · ',
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                          Text(
-                            '9시간 전',
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Stack(
-                      children: [
-                        Container(
-                          width: double.infinity,
-                          child: Image.network(
-                            'http://img.youtube.com/vi/_m-Hv2GZ0oE/mqdefault.jpg',
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Positioned(
-                          bottom: 5,
-                          right: 5,
-                          child: Container(
-                            padding: EdgeInsets.all(4),
-                            color: Colors.black.withOpacity(0.5),
-                            child: Text(
-                              '13:46',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 12,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: NetworkImage(
-                          'https://yt3.ggpht.com/ytc/AGIKgqO7Bd48gW5Yi6s3QgAyGL9b-I5f6scgnQhW50ug=s88-c-k-c0x00ffffff-no-rj',
-                        ),
-                      ),
-                      title: Text(
-                        '[뚜데] #27 "전기차 시기상조 맞습니다" 반년 타본 개발자의 솔직 후기 (소신발언 포함)',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      subtitle: Row(
-                        children: [
-                          Text(
-                            '판교 뚜벅쵸',
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                          Text(
-                            ' · ',
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                          Text(
-                            '조회수 8.5만회',
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                          Text(
-                            ' · ',
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                          Text(
-                            '2개월 전',
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                        ],
-                      ),
-                    ),
                     Row(
                       children: [
                         Padding(
@@ -422,66 +179,83 @@ class _MainScreenState extends State<MainScreen> {
                         ),
                       ],
                     ),
-                    Stack(
-                      children: [
-                        Container(
-                          width: double.infinity,
-                          child: Image.network(
-                            'http://img.youtube.com/vi/Q4DXkt_efS0/mqdefault.jpg',
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Positioned(
-                          bottom: 5,
-                          right: 5,
-                          child: Container(
-                            padding: EdgeInsets.all(4),
-                            color: Colors.black.withOpacity(0.5),
-                            child: Text(
-                              '25:12',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 12,
-                              ),
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Expanded(
+                        child: Row(
+                          children: [
+                            Shorts(
+                              shortsImage:
+                                  'https://i.ytimg.com/vi/66mIWo9Vqpc/hq720.jpg?sqp=-oaymwEdCJUDENAFSFXyq4qpAw8IARUAAIhCcAHAAQbQAQE=&rs=AOn4CLBwusM8Uu61GHbKufAEgXxVsoPOZA',
+                              shortsName:
+                                  '[젤다 왕눈]패러세일 없이 \n지저 내려가기ㅋㅋㅋㅋ #shorts',
+                              shortsViews: '11만',
                             ),
-                          ),
+                            Shorts(
+                              shortsImage:
+                                  'https://i.ytimg.com/vi/BQM-6y9-Awg/oar2.jpg?sqp=-oaymwEaCJUDENAFSFXyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLC8_XhqUMnbhEzL24Jfkt1Vg3gxQw',
+                              shortsName:
+                                  '한국 남자 혼자 밤 10시 쯤 \n시부야를 혼자 걸으면 듣는 다는 그 말 🇯🇵 ',
+                              shortsViews: '211만',
+                            ),
+                            Shorts(
+                              shortsImage:
+                                  'https://i.ytimg.com/vi/sUUOBtYBM8o/oar2.jpg?sqp=-oaymwEaCJUDENAFSFXyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLD7-_RJj6n2BP1KLVzW5QGt1oJcHg',
+                              shortsName: '크리스 범스테드 역시 \n사람인 이유!',
+                              shortsViews: '81만',
+                            ),
+                            Shorts(
+                              shortsImage:
+                                  'https://i.ytimg.com/vi/MRrtksYAUdM/oar2.jpg?sqp=-oaymwEaCJUDENAFSFXyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLBRTpM_5kM3v53vDfOzafwnfEprCQ',
+                              shortsName: '키 162에 덩크하려고 \n다리만 키우는 남자',
+                              shortsViews: '265만',
+                            )
+                          ],
                         ),
-                      ],
+                      ),
                     ),
-                    ListTile(
-                      leading: CircleAvatar(
-                        backgroundImage: NetworkImage(
+                    SizedBox(
+                      height: 24,
+                    ),
+                    thumbnail(
+                      imageUrl:
+                          'http://img.youtube.com/vi/V0eBEf9mD_8/mqdefault.jpg',
+                      videotime: '16:21',
+                    ),
+                    VideoInformation(
+                      youTuberimage:
+                          'https://yt3.ggpht.com/ytc/AGIKgqN5x06uPtKiqcBiK8H5uiaesPlQcFxujuuKNiOeMA=s88-c-k-c0x00ffffff-no-rj',
+                      title: '스파6 - 세번 잡히면 죽습니다',
+                      name: '아빠킹',
+                      views: '4만',
+                      beforUploadTime: '9시간',
+                    ),
+                    thumbnail(
+                      imageUrl:
+                          'http://img.youtube.com/vi/_m-Hv2GZ0oE/mqdefault.jpg',
+                      videotime: '13:46',
+                    ),
+                    VideoInformation(
+                      youTuberimage:
+                          'https://yt3.ggpht.com/ytc/AGIKgqO7Bd48gW5Yi6s3QgAyGL9b-I5f6scgnQhW50ug=s88-c-k-c0x00ffffff-no-rj',
+                      title:
+                          '[뚜데] #27 "전기차 시기상조 맞습니다" 반년 타본 개발자의 솔직 후기 (소신발언 포함)',
+                      name: '판교 뚜벅쵸',
+                      views: '8.5만',
+                      beforUploadTime: '2개월 전',
+                    ),
+                    thumbnail(
+                      imageUrl:
+                          'http://img.youtube.com/vi/Q4DXkt_efS0/mqdefault.jpg',
+                      videotime: '25:12',
+                    ),
+                    VideoInformation(
+                      youTuberimage:
                           'https://yt3.ggpht.com/K74Og8dqtK72UXy-ySJsXMZuMV4M71dCNQmIIOcPkzYHfdHvsUndE31Lbm1znSNVWcffJ_RP=s88-c-k-c0x00ffffff-no-rj',
-                        ),
-                      ),
-                      title: Text(
-                        '교수님 오늘이 축제인 거 알고 계십니까? [한양대 신소재공학과]ㅣ전과자 ep.27',
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      subtitle: Row(
-                        children: [
-                          Text(
-                            'ootb STUDIO',
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                          Text(
-                            ' · ',
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                          Text(
-                            '조회수 4.4만회',
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                          Text(
-                            ' · ',
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                          Text(
-                            '25분 전',
-                            style: TextStyle(color: Colors.grey),
-                          ),
-                        ],
-                      ),
+                      title: '교수님 오늘이 축제인 거 알고 계십니까? [한양대 신소재공학과]ㅣ전과자 ep.27',
+                      name: 'ootb STUDIO',
+                      views: '4.4만',
+                      beforUploadTime: '25분 전',
                     ),
                   ],
                 );
