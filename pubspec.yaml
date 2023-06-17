@@ -39,6 +39,8 @@ dependencies:
   webview_flutter: ^3.0.4
   intl: ^0.18.1
   image_picker: ^0.8.9
+  sensors_plus: ^3.0.2
+  soundpool: ^2.3.0
 
 dev_dependencies:
   flutter_test:
@@ -64,7 +66,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/pick.jpg
+    - assets/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
