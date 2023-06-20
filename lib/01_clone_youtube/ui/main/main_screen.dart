@@ -23,10 +23,26 @@ class _MainScreenState extends State<MainScreen> {
         backgroundColor: Colors.black,
         elevation: 0,
         actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Icon(
-              Icons.add_alert,
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Stack(children: [
+                Icon(
+                  Icons.add_alert,
+                ),
+                Positioned(
+                    right: 0,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(4),
+                        color: Colors.red,
+                      ),
+                      child: Text(
+                        '+9',
+                        style: TextStyle(color: Colors.white, fontSize: 8),
+                      ),
+                    ))
+              ]),
             ),
           ),
           Padding(
