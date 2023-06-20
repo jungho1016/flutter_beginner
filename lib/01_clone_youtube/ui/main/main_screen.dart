@@ -43,8 +43,8 @@ class _MainScreenState extends State<MainScreen> {
           ),
           CircleAvatar(
             backgroundImage: NetworkImage(
-              'https://yt3.ggpht.com/yti/AHyvSCDoFccJAOqPQN50_kd7D1l-T1ArHd8Pvmfmeg=s88-c-k-c0x00ffffff-no-rj-mo',
-            ),
+                'https://yt3.ggpht.com/yti/AHyvSCDoFccJAOqPQN50_kd7D1l-T1ArHd8Pvmfmeg=s88-c-k-c0x00ffffff-no-rj-mo',
+                scale: 0.1),
           ),
         ],
       ),
@@ -152,10 +152,9 @@ class _MainScreenState extends State<MainScreen> {
             ),
           ),
           Expanded(
-            child: ListView.builder(
-              itemCount: 1, // 아이템 개수 설정
-              itemBuilder: (context, index) {
-                return Column(
+            child: ListView(
+              children: [
+                Column(
                   children: [
                     Row(
                       children: [
@@ -258,10 +257,10 @@ class _MainScreenState extends State<MainScreen> {
                       beforUploadTime: '25분 전',
                     ),
                   ],
-                );
-              },
+                ),
+              ],
             ),
-          ),
+          )
         ],
       ),
     );

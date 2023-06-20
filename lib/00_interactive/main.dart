@@ -1,21 +1,46 @@
 import 'package:flutter/material.dart';
 
+class MyButton extends StatefulWidget {
+  @override
+  State<MyButton> createState() => _MyButtonState();
+}
+
+class _MyButtonState extends State<MyButton> {
+  late VoidCallback onPressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      onPressed: onPressed,
+      child: Text('Click Me'),
+    );
+  }
+}
+
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  void _handleButtonClick() {
+    print('Button clicked!');
+    // Perform any desired actions here
+  }
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      title: 'Flutter Callback Example',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Flutter Callback Example'),
+        ),
+        body: Center(
+          child: MyButton(
+            onPressed: _handleButtonClick,
+          ),
+        ),
       ),
-      home: MainScreen(),
     );
   }
 }
