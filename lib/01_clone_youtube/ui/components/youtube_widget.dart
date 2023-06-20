@@ -172,7 +172,7 @@ class Shorts extends StatelessWidget {
                 child: Container(
                   child: Text(
                     shortsName,
-                    overflow: TextOverflow.ellipsis,
+                    overflow: TextOverflow.ellipsis, // Stack 위의 컨테이너 ... 방법?
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 12,
