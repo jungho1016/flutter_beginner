@@ -100,76 +100,76 @@ class _MainScreenState extends State<MainScreen> {
       ),
       body: Column(
         children: [
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Expanded(
-              child: Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey,
-                        border: Border.all(),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                      ),
-                      width: 50,
-                      height: 30,
-                      child: Icon(
-                        Icons.explore_outlined,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                  TopCategoly(
-                    text: '전체',
-                    boxColor: Colors.white,
-                    textColor: Colors.black,
-                  ),
-                  TopCategoly(
-                    text: '뉴스',
-                    boxColor: Colors.grey,
-                    textColor: Colors.white,
-                  ),
-                  TopCategoly(
-                    text: '게임',
-                    boxColor: Colors.grey,
-                    textColor: Colors.white,
-                  ),
-                  TopCategoly(
-                    text: '음악',
-                    boxColor: Colors.grey,
-                    textColor: Colors.white,
-                  ),
-                  TopCategoly(
-                    text: '축구',
-                    boxColor: Colors.grey,
-                    textColor: Colors.white,
-                  ),
-                  TopCategoly(
-                    text: '야구',
-                    boxColor: Colors.grey,
-                    textColor: Colors.white,
-                  ),
-                  TopCategoly(
-                    text: '농구',
-                    boxColor: Colors.grey,
-                    textColor: Colors.white,
-                  ),
-                  TopCategoly(
-                    text: '영화',
-                    boxColor: Colors.grey,
-                    textColor: Colors.white,
-                  ),
-                ],
-              ),
-            ),
-          ),
           Expanded(
             child: ListView(
               children: [
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Expanded(
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.grey,
+                              border: Border.all(),
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(10),
+                              ),
+                            ),
+                            width: 50,
+                            height: 30,
+                            child: Icon(
+                              Icons.explore_outlined,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        TopCategoly(
+                          text: '전체',
+                          boxColor: Colors.white,
+                          textColor: Colors.black,
+                        ),
+                        TopCategoly(
+                          text: '뉴스',
+                          boxColor: Colors.grey,
+                          textColor: Colors.white,
+                        ),
+                        TopCategoly(
+                          text: '게임',
+                          boxColor: Colors.grey,
+                          textColor: Colors.white,
+                        ),
+                        TopCategoly(
+                          text: '음악',
+                          boxColor: Colors.grey,
+                          textColor: Colors.white,
+                        ),
+                        TopCategoly(
+                          text: '축구',
+                          boxColor: Colors.grey,
+                          textColor: Colors.white,
+                        ),
+                        TopCategoly(
+                          text: '야구',
+                          boxColor: Colors.grey,
+                          textColor: Colors.white,
+                        ),
+                        TopCategoly(
+                          text: '농구',
+                          boxColor: Colors.grey,
+                          textColor: Colors.white,
+                        ),
+                        TopCategoly(
+                          text: '영화',
+                          boxColor: Colors.grey,
+                          textColor: Colors.white,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
                 Column(
                   children: [
                     Row(
