@@ -10,8 +10,10 @@
         android:label="flutter_beginner"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
-        <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyA4U4EJFDiyhpaZLRJwD-bW68I6wF9vM2I"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="${googleMapApiKey}"
+            />
         <activity
             android:name=".MainActivity"
             android:exported="true"
