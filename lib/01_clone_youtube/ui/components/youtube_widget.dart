@@ -142,62 +142,63 @@ class Shorts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(4.0),
-          child: Container(
-            width: 140,
-            height: 200,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10.0),
-              color: Colors.white,
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: NetworkImage(
-                  shortsImage,
-                ),
-              ),
+    return Padding(
+      padding: const EdgeInsets.all(4.0),
+      child: Container(
+        width: 140,
+        height: 200,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10.0),
+          color: Colors.white,
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: NetworkImage(
+              shortsImage,
             ),
           ),
         ),
-        Positioned(
-          left: 2,
-          bottom: 5,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: Container(
-                  child: Text(
-                    shortsName,
-                    overflow: TextOverflow.ellipsis, // Stack 위의 컨테이너 ... 방법?
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
+        child: Stack(
+          children: [
+            Positioned(
+              left: 2,
+              bottom: 5,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Container(
+                      child: Text(
+                        shortsName,
+                        overflow:
+                            TextOverflow.ellipsis, // Stack 위의 컨테이너 ... 방법?
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ),
-              SizedBox(
-                height: 4,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: Text(
-                  '조회수 ${shortsViews}회',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
+                  SizedBox(
+                    height: 4,
                   ),
-                  textAlign: TextAlign.left,
-                ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Text(
+                      '조회수 ${shortsViews}회',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 12,
+                      ),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }
