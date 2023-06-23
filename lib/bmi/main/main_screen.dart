@@ -105,16 +105,18 @@ class MainScreenState extends State<MainScreen> {
                   //       weight: double.parse(_weightController.text),
                   //     ),
                   //   ),
-                  // );
+                  // ); // 되는 코드
 
-                  context.push(Uri(
-                    path: '/detail2',
-                    queryParameters: {
-                      'height': heightController.text,
-                      'weight': weightController.text,
-                    },
-                  ).toString());
-                },
+                  context.push('/details');}
+    }
+                //   context.push(Uri(
+                //     path: '/detail2',
+                //     queryParameters: {
+                //       'height': heightController.text,
+                //       'weight': weightController.text,
+                //     },
+                //   ).toString());
+                // }, // 되는 코드
                 child: Text('결과'),
               ),
             ],
