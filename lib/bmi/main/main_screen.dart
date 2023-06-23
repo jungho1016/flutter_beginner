@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_beginner/bmi/result/result_sceen.dart';
+import 'package:flutter_beginner/bmi/result/test.dart';
+import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../route.dart';
+
 class MainScreen extends StatefulWidget {
-  const MainScreen({Key? key}) : super(key: key);
+  MainScreen({Key? key}) : super(key: key);
 
   @override
-  State<MainScreen> createState() => _MainScreenState();
+  State<MainScreen> createState() => MainScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class MainScreenState extends State<MainScreen> {
   final _formKey = GlobalKey<FormState>();
-  final _heightController = TextEditingController();
-  final _weightController = TextEditingController();
+  final heightController = TextEditingController();
+  final weightController = TextEditingController();
 
   @override
   void initState() {
@@ -23,15 +27,15 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   void dispose() {
-    _heightController.dispose();
-    _weightController.dispose();
+    heightController.dispose();
+    weightController.dispose();
     super.dispose();
   }
 
   Future save() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setDouble('height', double.parse(_heightController.text));
-    await prefs.setDouble('weight', double.parse(_weightController.text));
+    await prefs.setDouble('height', double.parse(heightController.text));
+    await prefs.setDouble('weight', double.parse(weightController.text));
   }
 
   Future load() async {
@@ -40,8 +44,8 @@ class _MainScreenState extends State<MainScreen> {
     final double? weight = prefs.getDouble('weight');
 
     if (height != null && weight != null) {
-      _heightController.text = '$height';
-      _weightController.text = '$weight';
+      heightController.text = '$height';
+      weightController.text = '$weight';
     }
   }
 
@@ -59,7 +63,7 @@ class _MainScreenState extends State<MainScreen> {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               TextFormField(
-                controller: _heightController,
+                controller: heightController,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: '키',
@@ -74,7 +78,7 @@ class _MainScreenState extends State<MainScreen> {
               ),
               SizedBox(height: 8),
               TextFormField(
-                controller: _weightController,
+                controller: weightController,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: '몸무게',
@@ -89,20 +93,27 @@ class _MainScreenState extends State<MainScreen> {
               ),
               SizedBox(height: 8),
               ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
                   if (_formKey.currentState?.validate() == false) {
                     return;
                   }
-                  save();
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ResultSceen(
-                        height: double.parse(_heightController.text),
-                        weight: double.parse(_weightController.text),
-                      ),
-                    ),
-                  );
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(
+                  //     builder: (context) => ResultScreen(
+                  //       height: double.parse(_heightController.text),
+                  //       weight: double.parse(_weightController.text),
+                  //     ),
+                  //   ),
+                  // );
+
+                  context.push(Uri(
+                    path: '/detail2',
+                    queryParameters: {
+                      'height': heightController.text,
+                      'weight': weightController.text,
+                    },
+                  ).toString());
                 },
                 child: Text('결과'),
               ),

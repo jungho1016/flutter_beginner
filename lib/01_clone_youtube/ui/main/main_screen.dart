@@ -59,8 +59,8 @@ class _MainScreenState extends State<MainScreen> {
           ),
           CircleAvatar(
             backgroundImage: NetworkImage(
-                'https://yt3.ggpht.com/yti/AHyvSCDoFccJAOqPQN50_kd7D1l-T1ArHd8Pvmfmeg=s88-c-k-c0x00ffffff-no-rj-mo',
-                scale: 0.1), // 이미지 줄이는 방법??
+              'https://yt3.ggpht.com/yti/AHyvSCDoFccJAOqPQN50_kd7D1l-T1ArHd8Pvmfmeg=s88-c-k-c0x00ffffff-no-rj-mo',
+            ), // 이미지 줄이는 방법??
           ),
         ],
       ),
@@ -123,42 +123,42 @@ class _MainScreenState extends State<MainScreen> {
                       ),
                     ),
                   ),
-                  TopCategoly(
+                  TopCategory(
                     text: '전체',
                     boxColor: Colors.white,
                     textColor: Colors.black,
                   ),
-                  TopCategoly(
+                  TopCategory(
                     text: '뉴스',
                     boxColor: Colors.grey,
                     textColor: Colors.white,
                   ),
-                  TopCategoly(
+                  TopCategory(
                     text: '게임',
                     boxColor: Colors.grey,
                     textColor: Colors.white,
                   ),
-                  TopCategoly(
+                  TopCategory(
                     text: '음악',
                     boxColor: Colors.grey,
                     textColor: Colors.white,
                   ),
-                  TopCategoly(
+                  TopCategory(
                     text: '축구',
                     boxColor: Colors.grey,
                     textColor: Colors.white,
                   ),
-                  TopCategoly(
+                  TopCategory(
                     text: '야구',
                     boxColor: Colors.grey,
                     textColor: Colors.white,
                   ),
-                  TopCategoly(
+                  TopCategory(
                     text: '농구',
                     boxColor: Colors.grey,
                     textColor: Colors.white,
                   ),
-                  TopCategoly(
+                  TopCategory(
                     text: '영화',
                     boxColor: Colors.grey,
                     textColor: Colors.white,
@@ -193,42 +193,40 @@ class _MainScreenState extends State<MainScreen> {
               ),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
-                child: Expanded(
-                  child: Row(
-                    children: [
-                      Shorts(
-                        shortsImage:
-                            'https://i.ytimg.com/vi/66mIWo9Vqpc/hq720.jpg?sqp=-oaymwEdCJUDENAFSFXyq4qpAw8IARUAAIhCcAHAAQbQAQE=&rs=AOn4CLBwusM8Uu61GHbKufAEgXxVsoPOZA',
-                        shortsName: '[젤다 왕눈]패러세일 없이 \n지저 내려가기ㅋㅋㅋㅋ #shorts',
-                        shortsViews: '11만',
-                      ),
-                      Shorts(
-                        shortsImage:
-                            'https://i.ytimg.com/vi/BQM-6y9-Awg/oar2.jpg?sqp=-oaymwEaCJUDENAFSFXyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLC8_XhqUMnbhEzL24Jfkt1Vg3gxQw',
-                        shortsName:
-                            '한국 남자 혼자 밤 10시 쯤 \n시부야를 혼자 걸으면 듣는 다는 그 말 🇯🇵 ',
-                        shortsViews: '211만',
-                      ),
-                      Shorts(
-                        shortsImage:
-                            'https://i.ytimg.com/vi/sUUOBtYBM8o/oar2.jpg?sqp=-oaymwEaCJUDENAFSFXyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLD7-_RJj6n2BP1KLVzW5QGt1oJcHg',
-                        shortsName: '크리스 범스테드 역시 \n사람인 이유!',
-                        shortsViews: '81만',
-                      ),
-                      Shorts(
-                        shortsImage:
-                            'https://i.ytimg.com/vi/MRrtksYAUdM/oar2.jpg?sqp=-oaymwEaCJUDENAFSFXyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLBRTpM_5kM3v53vDfOzafwnfEprCQ',
-                        shortsName: '키 162에 덩크하려고 \n다리만 키우는 남자',
-                        shortsViews: '265만',
-                      )
-                    ],
-                  ),
+                child: Row(
+                  children: [
+                    Shorts(
+                      shortsImage:
+                          'https://i.ytimg.com/vi/66mIWo9Vqpc/hq720.jpg?sqp=-oaymwEdCJUDENAFSFXyq4qpAw8IARUAAIhCcAHAAQbQAQE=&rs=AOn4CLBwusM8Uu61GHbKufAEgXxVsoPOZA',
+                      shortsName: '[젤다 왕눈]패러세일 없이 \n지저 내려가기ㅋㅋㅋㅋ #shorts',
+                      shortsViews: '11만',
+                    ),
+                    Shorts(
+                      shortsImage:
+                          'https://i.ytimg.com/vi/BQM-6y9-Awg/oar2.jpg?sqp=-oaymwEaCJUDENAFSFXyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLC8_XhqUMnbhEzL24Jfkt1Vg3gxQw',
+                      shortsName:
+                          '한국 남자 혼자 밤 10시 쯤 \n시부야를 혼자 걸으면 듣는 다는 그 말 🇯🇵 ',
+                      shortsViews: '211만',
+                    ),
+                    Shorts(
+                      shortsImage:
+                          'https://i.ytimg.com/vi/sUUOBtYBM8o/oar2.jpg?sqp=-oaymwEaCJUDENAFSFXyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLD7-_RJj6n2BP1KLVzW5QGt1oJcHg',
+                      shortsName: '크리스 범스테드 역시 \n사람인 이유!',
+                      shortsViews: '81만',
+                    ),
+                    Shorts(
+                      shortsImage:
+                          'https://i.ytimg.com/vi/MRrtksYAUdM/oar2.jpg?sqp=-oaymwEaCJUDENAFSFXyq4qpAwwIARUAAIhCcAHAAQY=&rs=AOn4CLBRTpM_5kM3v53vDfOzafwnfEprCQ',
+                      shortsName: '키 162에 덩크하려고 \n다리만 키우는 남자',
+                      shortsViews: '265만',
+                    )
+                  ],
                 ),
               ),
               SizedBox(
                 height: 24,
               ),
-              thumbnail(
+              Thumbnail(
                 imageUrl: 'http://img.youtube.com/vi/V0eBEf9mD_8/mqdefault.jpg',
                 videotime: '16:21',
               ),
@@ -240,7 +238,7 @@ class _MainScreenState extends State<MainScreen> {
                 views: '4만',
                 beforUploadTime: '9시간',
               ),
-              thumbnail(
+              Thumbnail(
                 imageUrl: 'http://img.youtube.com/vi/_m-Hv2GZ0oE/mqdefault.jpg',
                 videotime: '13:46',
               ),
@@ -252,7 +250,7 @@ class _MainScreenState extends State<MainScreen> {
                 views: '8.5만',
                 beforUploadTime: '2개월 전',
               ),
-              thumbnail(
+              Thumbnail(
                 imageUrl: 'http://img.youtube.com/vi/Q4DXkt_efS0/mqdefault.jpg',
                 videotime: '25:12',
               ),

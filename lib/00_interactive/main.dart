@@ -36,8 +36,7 @@ class MyApp extends StatelessWidget {
           title: Text('Flutter Callback Example'),
         ),
         body: Center(
-          child: MyButton(
-            onPressed: _handleButtonClick,
+          child: Text('g2')
           ),
         ),
       ),

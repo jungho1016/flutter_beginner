@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class TopCategoly extends StatelessWidget {
+class TopCategory extends StatelessWidget {
   final String text;
   final Color boxColor;
   final Color textColor;
-  const TopCategoly(
+  const TopCategory(
       {Key? key,
       required this.text,
       required this.boxColor,
@@ -35,10 +35,10 @@ class TopCategoly extends StatelessWidget {
   }
 }
 
-class thumbnail extends StatelessWidget {
+class Thumbnail extends StatelessWidget {
   final String imageUrl;
   final String videotime;
-  const thumbnail({Key? key, required this.imageUrl, required this.videotime})
+  const Thumbnail({Key? key, required this.imageUrl, required this.videotime})
       : super(key: key);
 
   @override
@@ -167,9 +167,11 @@ class Shorts extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: Container(
+                    child: SizedBox(
+                      width: 136,
                       child: Text(
                         shortsName,
+                        maxLines: 2,
                         overflow:
                             TextOverflow.ellipsis, // Stack 위의 컨테이너 ... 방법?
                         style: TextStyle(
@@ -184,13 +186,16 @@ class Shorts extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                    child: Text(
-                      '조회수 ${shortsViews}회',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
+                    child: SizedBox(
+                      width: 200,
+                      child: Text(
+                        '조회수 ${shortsViews}회',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 12,
+                        ),
+                        textAlign: TextAlign.left,
                       ),
-                      textAlign: TextAlign.left,
                     ),
                   ),
                 ],
