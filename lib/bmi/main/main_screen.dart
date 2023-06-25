@@ -107,8 +107,14 @@ class MainScreenState extends State<MainScreen> {
                   //   ),
                   // ); // 되는 코드
 
-                  context.push('/details');}
-    }
+                  context.push(Uri(
+                    path: '/detail2',
+                    queryParameters: {
+                      'height': heightController.text,
+                      'weight': weightController.text,
+                    },
+                  ).toString());
+                },
                 //   context.push(Uri(
                 //     path: '/detail2',
                 //     queryParameters: {
