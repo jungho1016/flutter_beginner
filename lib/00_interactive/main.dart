@@ -35,10 +35,7 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Flutter Callback Example'),
         ),
-        body: Center(
-          child: Text('g2')
-          ),
-        ),
+        body: Center(child: Text('g2')),
       ),
     );
   }
