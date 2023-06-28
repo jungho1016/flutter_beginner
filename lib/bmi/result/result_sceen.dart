@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class ResultSceen extends StatelessWidget {
+class ResultScreen extends StatelessWidget {
   final double height;
   final double weight;
 
-  const ResultSceen({
+  const ResultScreen({
     Key? key,
     required this.height,
     required this.weight,
