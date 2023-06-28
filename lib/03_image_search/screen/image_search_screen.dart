@@ -36,6 +36,12 @@ class _ImageSearchScreenState extends State<ImageSearchScreen> {
   }
 
   @override
+  void dispose() {
+    controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
