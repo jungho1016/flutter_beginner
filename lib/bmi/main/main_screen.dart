@@ -81,7 +81,7 @@ class MainScreenState extends State<MainScreen> {
                   if (_formKey.currentState?.validate() == false) {
                     return;
                   }
-                  mainViewModel.save(100, 70);
+                  mainViewModel.save(_heightController, _weightController);
                   context.push(Uri(
                     path: '/detail2',
                     queryParameters: {

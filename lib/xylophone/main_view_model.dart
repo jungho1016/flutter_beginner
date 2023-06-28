@@ -1,14 +1,15 @@
 import 'package:flutter/services.dart';
 import 'package:soundpool/soundpool.dart';
+import 'package:flutter/foundation.dart';
 
 class XylophoneViewModel {
-  final Soundpool _pool;
+  Soundpool _pool = Soundpool.fromOptions(options: SoundpoolOptions());
 
-  XylophoneViewModel(this._pool);
+  List<int> soundIds = [];
+  ValueNotifier<bool> isLoading = ValueNotifier<bool>(true);
 
-  Future<List<int>> loadSoundIds() async {
-    final List<int> soundIds = [];
-    final List<String> noteNames = [
+  Future<void> initSoundPool() async {
+    List<String> noteNames = [
       'do1',
       're',
       'mi',
@@ -25,10 +26,14 @@ class XylophoneViewModel {
       soundIds.add(soundId);
     }
 
-    return soundIds;
+    isLoading.value = false;
   }
 
   void playSound(int soundId) {
     _pool.play(soundId);
+  }
+
+  void dispose() {
+    _pool.release();
   }
 }

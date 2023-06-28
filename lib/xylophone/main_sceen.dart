@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:soundpool/soundpool.dart';
 
+import 'main_view_model.dart';
+
 class XylophoneApp extends StatefulWidget {
   const XylophoneApp({Key? key}) : super(key: key);
 
@@ -10,69 +12,20 @@ class XylophoneApp extends StatefulWidget {
 }
 
 class _XylophoneAppState extends State<XylophoneApp> {
-  Soundpool pool = Soundpool.fromOptions(options: SoundpoolOptions.kDefault);
-
-  List<int> _soundIds = [];
-  bool _isLoading = true;
+  XylophoneViewModel viewModel = XylophoneViewModel();
 
   @override
   void initState() {
     super.initState();
-    initSoundPool();
+    viewModel.initSoundPool().then((_) {
+      setState(() {}); // Trigger a rebuild after the sound loading is complete
+    });
   }
 
-  Future<void> initSoundPool() async {
-    int soundId = await rootBundle
-        .load('assets/do1.wav')
-        .then((soundData) => pool.load(soundData));
-
-    _soundIds.add(soundId);
-
-    soundId = await rootBundle
-        .load('assets/re.wav')
-        .then((soundData) => pool.load(soundData));
-
-    _soundIds.add(soundId);
-
-    soundId = await rootBundle
-        .load('assets/mi.wav')
-        .then((soundData) => pool.load(soundData));
-
-    _soundIds.add(soundId);
-
-    soundId = await rootBundle
-        .load('assets/fa.wav')
-        .then((soundData) => pool.load(soundData));
-
-    _soundIds.add(soundId);
-
-    soundId = await rootBundle
-        .load('assets/sol.wav')
-        .then((soundData) => pool.load(soundData));
-
-    _soundIds.add(soundId);
-
-    soundId = await rootBundle
-        .load('assets/la.wav')
-        .then((soundData) => pool.load(soundData));
-
-    _soundIds.add(soundId);
-
-    soundId = await rootBundle
-        .load('assets/si.wav')
-        .then((soundData) => pool.load(soundData));
-
-    _soundIds.add(soundId);
-
-    soundId = await rootBundle
-        .load('assets/do2.wav')
-        .then((soundData) => pool.load(soundData));
-
-    _soundIds.add(soundId);
-
-    setState(() {
-      _isLoading = false;
-    });
+  @override
+  void dispose() {
+    viewModel.dispose();
+    super.dispose();
   }
 
   @override
@@ -82,52 +35,66 @@ class _XylophoneAppState extends State<XylophoneApp> {
       appBar: AppBar(
         title: Text('실로폰'),
       ),
-      body: _isLoading
-          ? Center(child: CircularProgressIndicator())
-          : Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
-                  child: gunban('도', Colors.red, _soundIds[0]),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  child: gunban('레', Colors.orange, _soundIds[1]),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 24.0),
-                  child: gunban('미', Colors.yellow, _soundIds[2]),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 32.0),
-                  child: gunban('파', Colors.green, _soundIds[3]),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 40.0),
-                  child: gunban('솔', Colors.teal, _soundIds[4]),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 48.0),
-                  child: gunban('라', Colors.blue, _soundIds[5]),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 56.0),
-                  child: gunban('시', Colors.indigo, _soundIds[6]),
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 64.0),
-                  child: gunban('도', Colors.purple, _soundIds[7]),
-                ),
-              ],
-            ),
+      body: ValueListenableBuilder<bool>(
+        valueListenable: viewModel.isLoading,
+        builder: (context, loading, _) {
+          return loading
+              ? Center(child: CircularProgressIndicator())
+              : Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 8.0, horizontal: 16.0),
+                      child: gunban('도', Colors.red, viewModel.soundIds[0]),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 8.0, horizontal: 12.0),
+                      child: gunban('레', Colors.orange, viewModel.soundIds[1]),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 8.0, horizontal: 8.0),
+                      child: gunban('미', Colors.yellow, viewModel.soundIds[2]),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 8.0, horizontal: 4.0),
+                      child: gunban('파', Colors.green, viewModel.soundIds[3]),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 8.0, horizontal: 2.0),
+                      child: gunban('솔', Colors.blue, viewModel.soundIds[4]),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 8.0, horizontal: 2.0),
+                      child: gunban('라', Colors.indigo, viewModel.soundIds[5]),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 8.0, horizontal: 4.0),
+                      child: gunban('시', Colors.purple, viewModel.soundIds[6]),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 8.0, horizontal: 8.0),
+                      child:
+                          gunban('도', Colors.deepPurple, viewModel.soundIds[7]),
+                    ),
+                  ],
+                );
+        },
+      ),
     );
   }
 
   Widget gunban(String text, Color color, int soundId) {
     return GestureDetector(
       onTap: () {
-        pool.play(soundId);
+        viewModel.playSound(soundId);
       },
       child: Container(
         width: 50,
