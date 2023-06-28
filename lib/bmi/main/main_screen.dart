@@ -16,16 +16,20 @@ class MainScreen extends StatefulWidget {
 
 class MainScreenState extends State<MainScreen> {
   final MainViewModel mainViewModel = MainViewModel();
+
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _heightController = TextEditingController();
+  final TextEditingController _weightController = TextEditingController();
   @override
   void initState() {
     super.initState();
-    mainViewModel.load();
+    mainViewModel.load(_heightController, _weightController);
   }
 
   @override
   void dispose() {
-    mainViewModel.heightController.dispose();
-    mainViewModel.weightController.dispose();
+    _heightController.dispose();
+    _weightController.dispose();
     super.dispose();
   }
 
@@ -38,12 +42,12 @@ class MainScreenState extends State<MainScreen> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Form(
-          key: mainViewModel.formkey,
+          key: _formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               TextFormField(
-                controller: mainViewModel.heightController,
+                controller: _heightController,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: '키',
@@ -58,7 +62,7 @@ class MainScreenState extends State<MainScreen> {
               ),
               SizedBox(height: 8),
               TextFormField(
-                controller: mainViewModel.weightController,
+                controller: _weightController,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: '몸무게',
@@ -74,14 +78,15 @@ class MainScreenState extends State<MainScreen> {
               SizedBox(height: 8),
               ElevatedButton(
                 onPressed: () async {
-                  if (mainViewModel.formkey.currentState?.validate() == false) {
+                  if (_formKey.currentState?.validate() == false) {
                     return;
                   }
+                  mainViewModel.save(_heightController, _weightController);
                   context.push(Uri(
                     path: '/detail2',
                     queryParameters: {
-                      'height': mainViewModel.heightController.text,
-                      'weight': mainViewModel.heightController.text,
+                      'height': _heightController.text,
+                      'weight': _heightController.text,
                     },
                   ).toString());
                 },
