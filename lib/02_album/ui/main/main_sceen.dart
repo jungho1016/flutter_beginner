@@ -24,7 +24,7 @@ class _MainScreenState extends State<MainScreen> {
         title: Text('Album'),
         centerTitle: true,
       ),
-      body: FutureBuilder<List<dynamic>>(
+      body: FutureBuilder<List<Album>>(
         future: album,
         builder: (context, snapshot) {
           if (snapshot.hasData) {
