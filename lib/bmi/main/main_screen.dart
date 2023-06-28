@@ -86,9 +86,11 @@ class MainScreenState extends State<MainScreen> {
                     path: '/detail2',
                     queryParameters: {
                       'height': _heightController.text,
-                      'weight': _heightController.text,
+                      'weight': _weightController.text,
                     },
                   ).toString());
+                  print(_heightController.text);
+                  print(_weightController.text);
                 },
                 child: Text('결과'),
               ),
